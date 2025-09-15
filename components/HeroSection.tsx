@@ -30,7 +30,9 @@ export default function HeroSection() {
       setCurrentTitle((prev) => (prev + 1) % titles.length);
     }, 3000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <div
@@ -93,7 +95,7 @@ export default function HeroSection() {
           >
             <div className="mb-6">
               <span className="text-orange-400 text-lg font-light tracking-wider">
-                Hello, I'm
+                Hello, I&apos;m
               </span>
             </div>
 
@@ -139,9 +141,8 @@ export default function HeroSection() {
                 <a
                   key={social}
                   href={`#${social.toLowerCase()}`}
-                  className={`text-gray-400 hover:text-orange-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 ${
-                    isLoaded ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`text-gray-400 hover:text-orange-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 ${isLoaded ? "opacity-100" : "opacity-0"
+                    }`}
                   style={{ transitionDelay: `${800 + index * 100}ms` }}
                 >
                   {social}
@@ -152,9 +153,8 @@ export default function HeroSection() {
 
           {/* Right side */}
           <div
-            className={`lg:w-1/2 flex justify-center lg:justify-end transform transition-all duration-1000 ${
-              isLoaded ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
-            }`}
+            className={`lg:w-1/2 flex justify-center lg:justify-end transform transition-all duration-1000 ${isLoaded ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+              }`}
             style={{ transitionDelay: "400ms" }}
           >
             <div className="relative">
