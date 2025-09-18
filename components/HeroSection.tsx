@@ -118,8 +118,8 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="/explore"
-                className="group relative px-8 py-4 bg-gradient-to-r from-orange-600 to-purple-600 rounded-full hover:from-orange-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 font-semibold"
+                href="/project"
+                className="group relative px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-600 rounded-full hover:from-orange-500 hover:to-orange-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 font-semibold"
               >
                 <span className="relative z-10">Explore My Work</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>

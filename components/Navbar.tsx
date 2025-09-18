@@ -5,13 +5,14 @@ import {
   Folder,
   ShoppingBag,
   Wrench,
-  Edit3
+  Edit3,
+  IdCard
 } from "lucide-react";
 
 export default function IconNavbar() {
   const items = [
     { href: "/", icon: <Home size={22} /> },
-    { href: "/explore", icon: <Folder size={22} /> },
+    { href: "/aboutme", icon: <IdCard size={22} /> },
     { href: "/projects", icon: <ShoppingBag size={22} /> },
     { href: "/tools", icon: <Wrench size={22} /> },
     { href: "/contact", icon: <Edit3 size={22} /> },
