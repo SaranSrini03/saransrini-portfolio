@@ -105,7 +105,7 @@ const HeroSection = () => {
                 variant="primary"
                 className="group relative overflow-hidden px-8 py-6 text-lg"
               >
-                <a href="/project">
+                <a href="/projects">
                   <span className="relative z-10">Explore My Work</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </a>

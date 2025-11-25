@@ -72,7 +72,7 @@ const Skills = () => {
     <section 
       id="skills" 
       ref={sectionRef}
-      className={`min-h-screen w-full py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900 transition-opacity duration-1000 font-mono ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`w-full py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900 transition-opacity duration-1000 font-mono ${isVisible ? 'opacity-100' : 'opacity-0'}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className={`space-y-12 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
+import SpaceBackground from '@/components/ui/SpaceBackground';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isInViewport, setIsInViewport] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +23,9 @@ const Contact = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          setIsInViewport(true);
+        } else {
+          setIsInViewport(false);
         }
       },
       {
@@ -80,20 +85,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6 text-orange-400" />,
       title: 'Email',
-      value: 'saran@example.com',
-      link: 'mailto:saran@example.com'
+      value: 'saransrini.dev.com',
+      link: 'mailto:saransrini.dev@gmail.com'
     },
     {
       icon: <MapPin className="w-6 h-6 text-orange-400" />,
       title: 'Location',
-      value: 'Chennai, India',
-      link: 'https://maps.google.com?q=Chennai'
+      value: 'India',
+      link: 'https://maps.google.com?q=India'
     },
     {
       icon: <Phone className="w-6 h-6 text-orange-400" />,
       title: 'Phone',
-      value: '+91 9876543210',
-      link: 'tel:+919876543210'
+      value: '+91 8072872929',
+      link: 'tel:+918072872777'
     }
   ];
 
@@ -101,9 +106,15 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={sectionRef}
-      className={`min-h-screen w-full py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black transition-opacity duration-1000 font-mono ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative w-full py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden transition-opacity duration-1000 font-mono ${isVisible ? 'opacity-100' : 'opacity-0'}`}
     >
-      <div className="max-w-7xl mx-auto">
+      {isInViewport && (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <SpaceBackground />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/90 to-black" />
+        </div>
+      )}
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className={`space-y-12 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent tracking-tight inline-block">
@@ -147,25 +158,26 @@ const Contact = () => {
                 <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   {[
-                    { name: 'GitHub', url: 'https://github.com' },
-                    { name: 'LinkedIn', url: 'https://linkedin.com' },
-                    { name: 'Twitter', url: 'https://twitter.com' },
-                    { name: 'Instagram', url: 'https://instagram.com' },
-                  ].map((social, index) => (
-                    <a 
-                      key={index}
-                      href={social.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-orange-400 transition-colors"
-                      aria-label={social.name}
-                    >
-                      <span className="sr-only">{social.name}</span>
-                      <span className="text-lg">{social.name === 'GitHub' ? '💻' : 
-                                              social.name === 'LinkedIn' ? '🔗' :
-                                              social.name === 'Twitter' ? '🐦' : '📸'}</span>
-                    </a>
-                  ))}
+                    { name: 'GitHub', url: 'https://github.com/saransrini03', icon: Github },
+                    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/saransrini03/', icon: Linkedin },
+                    { name: 'X', url: 'https://x.com/s4r4nsr1n1', icon: Twitter },
+                    { name: 'Instagram', url: 'https://www.instagram.com/saransriniv/', icon: Instagram },
+                  ].map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a 
+                        key={index}
+                        href={social.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-orange-400 transition-colors"
+                        aria-label={social.name}
+                      >
+                        <span className="sr-only">{social.name}</span>
+                        <Icon className="w-5 h-5" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>

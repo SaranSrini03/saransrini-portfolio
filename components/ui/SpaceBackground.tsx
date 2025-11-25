@@ -38,7 +38,7 @@ const SpaceBackground = () => {
 
     // Initialize stars
     const initStars = () => {
-      const starCount = Math.floor((window.innerWidth * window.innerHeight) / 10000);
+      const starCount = Math.floor((window.innerWidth * window.innerHeight) / 14000);
       stars.current = Array(starCount).fill(0).map(() => ({
         x: Math.random() * canvas!.width,
         y: Math.random() * canvas!.height,
@@ -54,8 +54,8 @@ const SpaceBackground = () => {
       let x: number, y: number, angle: number;
 
       // Base comet properties
-      const size = 1.5 + Math.random() * 2.5;
-      const speed = 3 + Math.random() * 8; // Wider speed range
+      const size = 1 + Math.random() * 1.5;
+      const speed = 1.5 + Math.random() * 3; // slower for infrequent, gentle motion
       
       // Different spawn and angle patterns based on comet type
       switch(cometType) {
@@ -130,7 +130,7 @@ const SpaceBackground = () => {
       const currentTime = time * 0.001; // Convert to seconds
       
       // Spawn new comets more frequently
-      if (currentTime - cometSpawnTime.current > 0.5 + Math.random() * 2) {
+      if (currentTime - cometSpawnTime.current > 4 + Math.random() * 3) {
         createComet();
         cometSpawnTime.current = currentTime;
       }
