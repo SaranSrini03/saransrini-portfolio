@@ -9,6 +9,7 @@ import SpaceBackground from '@/components/ui/SpaceBackground';
 import { Button } from '@/components/ui/Button';
 import TypingEffect from '@/components/ui/TypingEffect';
 import SpotlightCard from '@/components/ui/SpotlightCard';
+import Link from 'next/link';
 
 const FloatingParticles = dynamic(
   () => import('@/components/ui/FloatingParticles'),
@@ -105,10 +106,10 @@ const HeroSection = () => {
                 variant="primary"
                 className="group relative overflow-hidden px-8 py-6 text-lg"
               >
-                <a href="/projects">
+                <Link href="/projects">
                   <span className="relative z-10">Explore My Work</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </a>
+                </Link>
               </Button>
 
               <Button
@@ -116,12 +117,12 @@ const HeroSection = () => {
                 variant="outline"
                 className="group px-8 py-6 text-lg border-orange-500/30 hover:bg-orange-500/10 text-orange-400"
               >
-                <a href="/contact">
+                <Link href="/contact">
                   Get In Touch
                   <span className="inline-block ml-1.5 sm:ml-2 transition-transform group-hover:translate-x-0.5 text-sm sm:text-base">
                     →
                   </span>
-                </a>
+                </Link>
               </Button>
             </div>
 
